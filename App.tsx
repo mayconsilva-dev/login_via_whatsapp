@@ -1,22 +1,29 @@
+import { StatusBar } from 'react-native';
+import { 
+  useFonts, 
+  Poppins_700Bold, 
+  Poppins_400Regular 
+} from '@expo-google-fonts/poppins';
+
 import { GluestackUIProvider, VStack } from '@gluestack-ui/themed'
-import { config } from '@gluestack-ui/config'
+import { config } from './config/gluestack-ui.config'
 
-
-import { StatusBar, View } from 'react-native';
-
-import LoginScreen from './src/screens/LoginScreen';
+import Login from './src/screens/Login';
+import { Loading } from './src/components/Loading';
 
 export default function App() {
+
+  const [fontsLoaded] = useFonts({Poppins_400Regular, Poppins_700Bold})
+
   return (
     <GluestackUIProvider config={config}>
-      <VStack flex={1}>
         <StatusBar 
-          barStyle={'light-content'} 
+          barStyle={'dark-content'} 
           backgroundColor="transparent"
           translucent
         />
-          <LoginScreen/>
-      </VStack>
+
+          { fontsLoaded ? <Login/> : <Loading/>}
     </GluestackUIProvider>
   );
 }
