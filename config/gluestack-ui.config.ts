@@ -549,7 +549,6 @@ export const gluestackUIConfig = createConfig({
     fonts: {
       heading: 'Poppins_700Bold',
       body: 'Poppins_400Regular',
-      mono: undefined,
     },
     fontSizes: {
       '2xs': 10,

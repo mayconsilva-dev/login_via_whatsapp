@@ -56,88 +56,96 @@ const LoginScreen = () => {
   return (
     <VStack flex={1}>
       <VStack 
+        alignItems="center"
         w="$full"
         h="$3/5"
         bg="$purple500"
+        >
+          <VStack
+            justifyContent='center'
+            alignItems='center'
+            pt="$16"
+            >
+            <HStack 
+              pb="$16"
+              pr="$32">
+              <Image 
+                source={require('../../assets/logo_g3.png')}
+                alt='Imagem da logo g3'
+                w="$10"
+                h="$16"
+                pt="$2"
+              />
+              <Text
+               fontFamily='$body'
+               color='$gray100'
+               pt="$8"
+               >
+                FINANÇAS
+              </Text>
+            </HStack>
+          </VStack>
+
+          <Text 
+            fontSize="$3xl"
+            fontFamily="$heading"
+            color="$gray100"
+            pb="$10"
+            pl="$11"
+            
+          >
+            Controle suas {'\n'}
+            finanças de forma {'\n'}
+            muito simples
+          </Text>
+
+          <Text
+            fontSize="$md"
+            fontFamily="$body"
+            color="$gray100"
+            pt="$10"
+            pl="$48"
+            pr="$full"
+          >
+            Faça seu login {'\n'}
+            via WhatsApp
+          </Text>
+      </VStack>
+    
+      <VStack 
         justifyContent='center'
         alignItems='center'
-        pt="$20"
-        >
-          <HStack 
-            pb="$16"
-            pr="$32">
-            <Image 
-              source={require('../../assets/logo_g3.png')}
-              alt='Imagem da logo g3'
-              w="$10"
-              h="$16"
-              pt="$2"
-            />
-            <Text
-             fontFamily='$body'
-             color='$gray100'
-             pt="$8"
-             >
-              FINANÇAS
-            </Text>
-          </HStack>
-        <Text 
-          fontSize="$3xl"
-          fontFamily="$heading"
-          color="$gray100"
-          pb="$10"
-          pl="$11"
-          
-        >
-          Controle suas {'\n'}
-          finanças de forma {'\n'}
-          muito simples
-        </Text>
-        <Text
-          fontSize="$md"
-          fontFamily="$body"
-          color="$gray100"
-          pt="$10"
-          pl="$48"
-          pr="$full"
-        >
-          Faça seu login {'\n'}
-          via WhatsApp
-        </Text>
-    </VStack>
-    
-    <VStack 
-      justifyContent='center'
-      alignItems='center'
-      position="absolute"
-      paddingTop="$full" 
-      top="11.5%"
-      right="$1"
-      left="$1"
-      zIndex={1} 
+        position="absolute"
+        paddingTop="$full" 
+        top="11.5%"
+        right="$1"
+        left="$1"
+        zIndex={1} 
       >
-        <TextInput
-          style={{
-            backgroundColor: 'white',
-            width: '55%',
-            padding: 14,
-            borderRadius: 5,
-            
-          }}
-          placeholder="Digite seu número"
-          keyboardType="phone-pad"
-          value={phoneNumber}
-          onChangeText={setPhoneNumber} />
+          <TextInput
+            style={{
+              backgroundColor: 'white',
+              width: '55%',
+              padding: 14,
+              borderRadius: 5,
+              
+            }}
+            placeholder="Digite seu número"
+            keyboardType="phone-pad"
+            value={phoneNumber}
+            onChangeText={setPhoneNumber} 
+          />
       </VStack>
       
       <VStack 
         alignItems='center'
         bg="$orange400"
         h="$4/6"
-        pt="$16">
+        pt="$16"
+      >
         <Button
           onPress={handleLogin}
-          bg="$primary500"
+          bg="$purple500"
           p="$3"
           w="$32"
           h="$10"
@@ -148,7 +156,7 @@ const LoginScreen = () => {
             Entrar
           </Text>
         </Button>
-       </VStack>
+      </VStack>
     </VStack>
   );
 };
