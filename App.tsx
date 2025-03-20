@@ -10,7 +10,9 @@ import { config } from './config/gluestack-ui.config'
 
 import Login from './src/screens/Login';
 import { Confirmation } from './src/screens/ConfirmationScreen';
+
 import { Loading } from './src/components/Loading';
+import { Start } from './src/components/Start';
 
 export default function App() {
 
@@ -24,7 +26,7 @@ export default function App() {
           translucent
         />
 
-          { fontsLoaded ? <Confirmation/> : <Loading/>}
+          { fontsLoaded ? <Start/> : <Loading/>}
     </GluestackUIProvider>
   );
 }

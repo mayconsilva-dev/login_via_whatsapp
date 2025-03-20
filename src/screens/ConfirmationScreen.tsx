@@ -154,7 +154,7 @@ export function Confirmation(){
           </VStack>
           <VStack
             alignItems='center'
-            bg="$orange400"
+            bg="$orange500"
             h="$4/6"
             pt="$5"
             >
